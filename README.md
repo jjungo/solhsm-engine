@@ -31,4 +31,4 @@ This Docker container contains a public certificate and czmq certificates in ord
 to work this my demo. If you want our own (see *engineCtrl=ZMQ_SERVER_PUB_CERT_PATH*, *engineCtrl=ZMQ_CLIENT_PRIV_CERT_PATH* and *cert* variables in *apache.conf* file), your have to create them your self:
 
 - czmq certificates generator:
-- In order to make your x509 certificate, you need extract the *Certificate Signing Request* (CSR) and sign it your self or by our CA.
+- In order to make your x509 certificate, you need extract the *Certificate Signing Request* (CSR) and sign it your self or by your CA.
