@@ -1,3 +1,10 @@
+# data directory
+data/
+
+# do not push cert
+*.cert
+*.cert_secret
+
 # Object files
 *.o
 *.ko

@@ -1,28 +1,15 @@
-FROM jjungo/img-base
+FROM jjungo/img-base:0.9a
 
 MAINTAINER Joel Jungo <j.jungo@gmail.com>
 
 RUN     apt-get update && apt-get upgrade -y \
-        && apt-get install git stunnel apache2 libssl-dev -y
+        && apt-get install stunnel apache2 libssl-dev -y
 
 RUN     cp /usr/share/zoneinfo/Europe/Zurich /etc/localtime \
         && echo "Europe/Zurich" > /etc/timezone
 
-WORKDIR /root/install
-
-RUN     git clone https://github.com/jjungo/solhsm-engine.git /root/install/solhsm-engine
-
+COPY    ./ /root/install/solhsm-engine
 WORKDIR /root/install/solhsm-engine
-
-## generate certificate
-RUN     cd ./tools/ \
-        && make \
-        && ./generate_cert client \
-        && mkdir -p /root/keys/pub /root/keys/priv \
-        && ls -all /root/keys \
-        && cp client.cert_secret /root/keys/priv/ \
-        && cp client.cert /root/keys/
-
 RUN     make && make install
 
 COPY    apache.conf /etc/stunnel/stunnel.conf
