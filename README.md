@@ -1,4 +1,4 @@
-# Simple Open & Light on Android - Web Server Engine
+# Simple Open & Light - Web Server Engine
 
 This repo contains only the web server ENGINE part. It provides tools in order
 to build an image that containing:
