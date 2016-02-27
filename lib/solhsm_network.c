@@ -24,7 +24,7 @@
  * @date:     Dec, 30 2014
  */
 
-#include "../include/solhsm-network.h"
+#include "solhsm_network.h"
 
 int net_send(void* socket, net_frame_container* container, void* payload)
 {
