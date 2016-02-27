@@ -1,7 +1,7 @@
 # Simple Open & Light - Web Server Engine
 
-This repo contains only the web server ENGINE part. It provides tools in order
-to build an image that containing:
+This repository contains the ENGINE web server's part. It provides tools in order
+to build an image containing:
 
 - apache2 web service
 - stunnel4 ssl proxy
@@ -15,11 +15,11 @@ First setup solhsm-engine Docker container and generate curve keys .
 
 Next, generate a TLS certificate (see [solhsm-mgmt readme](https://github.com/jjungo/solhsm-mgmt)).
 
-Place your HSM public certificate into the `data/keys` and the TLS certificate
+Place your HSM's public certificate into the `data/keys`, and the TLS certificate
 into the `data/cert` directory. Don't forget to share the curve certificate
 (`data/keys/client.cert`) with your HSM!
 
-Configure stunnel (`apache.conf`) and feed theses options:
+Configure stunnel (`apache.conf`) and feed these options:
 
     engineCtrl=ZMQ_SERVER_PUB_CERT_PATH:<full path of the pub hsm curve cert>
     engineCtrl=ZMQ_CLIENT_PRIV_CERT_PATH:<full path of the priv curve cert>
@@ -30,7 +30,7 @@ Configure stunnel (`apache.conf`) and feed theses options:
 
     docker build -t solhsm-engine .
 
-At this point your may have in your data folder in your current directory:
+At this point, this is what you should have in your current directory:
 
     data
     ├── cert
