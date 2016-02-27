@@ -36,6 +36,6 @@ cleanall:
 	rm -rf $(EXEC)
 
 install:
-	sudo mkdir /usr/lib/engines
+	sudo mkdir -p /usr/lib/engines
 	sudo cp ./solhsm_engine.so /usr/lib/engines/solhsm_engine.so
 
